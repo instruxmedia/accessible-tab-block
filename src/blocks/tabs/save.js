@@ -10,6 +10,9 @@ export default function save({ attributes }) {
 		orientation,
 	} = attributes;
 
+	const instructions = orientation === 'vertical' ? 
+		__( 'Vertical tabs', 'tabs-block' ) : 
+		__( 'Horizontal tabs', 'tabs-block' );
 	const orientationClassSuffix = orientation === 'vertical' ? ' tb__tabs-vertical' : '';
   const customClassSuffix = customClass ? ` ${customClass}` : '';
 
@@ -22,6 +25,7 @@ export default function save({ attributes }) {
 				className={`tb__tab-labels`}
 				role="tablist"
 				aria-orientation={orientation === 'vertical' ? orientation : null}
+				aria-label={instructions}
 			>
 				{tabLabelsArray.map((label, i) => {
 					return (

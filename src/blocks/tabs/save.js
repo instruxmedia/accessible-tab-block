@@ -28,6 +28,7 @@ export default function save({ attributes }) {
 									: 'tb__tab-label'
 							}
 							role="tab"
+							type="button"
 							aria-selected={i === 0 ? 'true' : 'false'}
 						>
 							<RawHTML>{label}</RawHTML>

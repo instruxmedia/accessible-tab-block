@@ -81,27 +81,27 @@ export default function Edit({ attributes, setAttributes, clientId }) {
 											'tab-blocks'
 										)}
 										initialOpen={true}
-										>
-											<SelectControl
-												label={__(
-													'Orientation',
-													'tab-blocks'
-												)}
-												value={orientation}
-												options={[
-													{ label: __( 'Horizontal', 'tab-blocks' ), value: 'horizontal' },
-													{ label: __( 'Vertical', 'tab-blocks' ), value: 'vertical' },
-												]}
-												onChange={(orientationValue) =>
-													setAttributes({
-														orientation: orientationValue,
-													})
-												}
-												help={__(
-													'Selecting "vertical" will set aria-orientation="vertical" on the tablist and require the up and down arrows to navigate, rather than the left and right arrows. This will NOT affect visual layout. That must be handled using custom CSS targetting the CSS class .tb__tabs-vertical.',
-													'tab-block'
-												)}
-											/>
+									>
+										<SelectControl
+											label={__(
+												'Orientation',
+												'tab-blocks'
+											)}
+											value={orientation}
+											options={[
+												{ label: __( 'Horizontal', 'tab-blocks' ), value: 'horizontal' },
+												{ label: __( 'Vertical', 'tab-blocks' ), value: 'vertical' },
+											]}
+											onChange={(orientationValue) =>
+												setAttributes({
+													orientation: orientationValue,
+												})
+											}
+											help={__(
+												'Selecting "vertical" will set aria-orientation="vertical" on the tablist and require the up and down arrows to navigate, rather than the left and right arrows. This will NOT affect visual layout. That must be handled using custom CSS targetting the CSS class .tb__tabs-vertical.',
+												'tab-block'
+											)}
+										/>
 									</PanelBody>
 									<PanelBody
 										title={__(

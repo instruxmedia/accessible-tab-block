@@ -4,7 +4,7 @@
  * Description:       A custom block to show content in tabpanels.
  * Requires at least: 5.7
  * Requires PHP:      7.4
- * Version:           1.0.3
+ * Version:           1.4.0
  * Author:            Joe Dolson
  * Author URI:        https://www.joedolson.com
  * License:           GPL-2.0-or-later

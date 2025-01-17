@@ -73,10 +73,12 @@ registerBlockType( 'tb/tab', {
 				[ 'core/heading', { placeholder: __( 'Tabpanel Content', 'tabs-block' ) } ],
 				[ 'core/paragraph' ],
 		] ] ];
+		const blockID = parentBlockID + '_' + getBlockIndex;
 		return (
 			<div className={className}>
-				<label aria-hidden="true">{ __( 'Tab Label', 'tabs-block' ) }</label>
+				<label htmlFor={blockID} aria-hidden="true">{ __( 'Tab Label', 'tabs-block' ) }</label>
 				<RichText
+					id={blockID}
 					tagName="p"
 					className={`tb__tab_label`}
 					value={tabLabel}
@@ -92,8 +94,7 @@ registerBlockType( 'tb/tab', {
 			</div>
 		);
 	},
-	save: ({ attributes }) => {
-		const { tabLabel } = attributes;
+	save: () => {
 		return (
 			<div
 				className="tb__tab-panel"

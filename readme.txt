@@ -3,7 +3,7 @@ Contributors: joedolson
 Tags: tabs block, tab block, accessibility
 Requires at least: 5.7
 Tested up to: 6.7
-Stable tag: 1.0.3
+Stable tag: 1.4.0
 Requires PHP: 7.4
 License: GPLv2 or later
 License URI: https://www.gnu.org/licenses/gpl-2.0.html
@@ -15,6 +15,12 @@ Build an accessible tab panel in the WordPress block editor.
 Accessible tab panels from the WP block editor.
 
 == Changelog ==
+
+= 1.4.0 =
+
+* Customized fork by Instrux Media to implement for a client installation.
+* Changes to address accessibility testing issues.
+* Several minor code changes to address eslint warnings.
 
 = 1.0.3 =
 

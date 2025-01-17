@@ -1,4 +1,4 @@
-// import { __ } from '@wordpress/i18n';
+import { __ } from '@wordpress/i18n';
 import { useBlockProps, InnerBlocks } from '@wordpress/block-editor';
 const { RawHTML } = wp.element;
 
@@ -7,33 +7,44 @@ export default function save({ attributes }) {
 		tabLabelsArray,
 		customClass,
 		anchorId,
+		orientation,
 	} = attributes;
 
+	const instructions = orientation === 'vertical' ? 
+		__( 'Vertical tabs', 'tabs-block' ) : 
+		__( 'Horizontal tabs', 'tabs-block' );
+	const orientationClassSuffix = orientation === 'vertical' ? ' tb__tabs-vertical' : '';
+  const customClassSuffix = customClass ? ` ${customClass}` : '';
+
 	const blockProps = useBlockProps.save({
-		className: `tb__tabs_accessible_tabs ` + customClass,
+		className: `tb__tabs_accessible_tabs${orientationClassSuffix}${customClassSuffix}`,
 	});
 	return (
 		<div {...blockProps} id={anchorId ? anchorId : null}>
-			<ul
+			<div
 				className={`tb__tab-labels`}
 				role="tablist"
+				aria-orientation={orientation === 'vertical' ? orientation : null}
+				aria-label={instructions}
 			>
 				{tabLabelsArray.map((label, i) => {
 					return (
-						<li key={i}><button
+						<button
+							key={i}
 							className={
 								i === 0
 									? 'tb__tab-label active'
 									: 'tb__tab-label'
 							}
 							role="tab"
+							type="button"
 							aria-selected={i === 0 ? 'true' : 'false'}
 						>
 							<RawHTML>{label}</RawHTML>
-						</button></li>
+						</button>
 					);
 				})}
-			</ul>
+			</div>
 			<div className="tb__tab-content">
 				<InnerBlocks.Content />
 			</div>

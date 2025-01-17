@@ -24,6 +24,11 @@
 		},
 		"customClass": {
 			"type": "string"
+		},
+		"orientation": {
+			"type": "string",
+			"enum": ["horizontal", "vertical"],
+			"default": "horizontal"
 		}
 	},
 	"textdomain": "tabs-block",

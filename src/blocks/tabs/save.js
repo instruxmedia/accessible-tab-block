@@ -14,13 +14,14 @@ export default function save({ attributes }) {
 	});
 	return (
 		<div {...blockProps} id={anchorId ? anchorId : null}>
-			<ul
+			<div
 				className={`tb__tab-labels`}
 				role="tablist"
 			>
 				{tabLabelsArray.map((label, i) => {
 					return (
-						<li key={i}><button
+						<button
+							key={i}
 							className={
 								i === 0
 									? 'tb__tab-label active'
@@ -30,10 +31,10 @@ export default function save({ attributes }) {
 							aria-selected={i === 0 ? 'true' : 'false'}
 						>
 							<RawHTML>{label}</RawHTML>
-						</button></li>
+						</button>
 					);
 				})}
-			</ul>
+			</div>
 			<div className="tb__tab-content">
 				<InnerBlocks.Content />
 			</div>

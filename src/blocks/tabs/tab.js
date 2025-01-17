@@ -94,8 +94,7 @@ registerBlockType( 'tb/tab', {
 			</div>
 		);
 	},
-	save: ({ attributes }) => {
-		const { tabLabel } = attributes;
+	save: () => {
 		return (
 			<div
 				className="tb__tab-panel"

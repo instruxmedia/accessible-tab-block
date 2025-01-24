@@ -66,7 +66,7 @@ final class TB_BLOCKS_CLASS {
 		if ( SCRIPT_DEBUG ) {
 			define( 'TB_VERSION', time() );
 		} else {
-			define( 'TB_VERSION', '1.0.0' );
+			define( 'TB_VERSION', '1.4.0' );
 		}
 		define( 'TB_URL', plugin_dir_url( __FILE__ ) );
 		define( 'TB_LIB_URL', TB_URL . 'lib/' );

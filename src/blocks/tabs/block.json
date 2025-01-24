@@ -1,7 +1,7 @@
 {
 	"apiVersion": 2,
 	"name": "tb/tabs",
-	"version": "1.0.0",
+	"version": "1.4.0",
 	"title": "Accessible Tab Block",
 	"category": "tb-block",
 	"description": "Display content in accessible tabpanels",
